@@ -29,11 +29,21 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          statusBarStyle: colorScheme === 'dark' ? 'light' : 'dark',
+          statusBarTranslucent: true,
+          contentStyle: {
+            backgroundColor: '#F5F3FF',
+          },
+          animation: 'slide_from_right',
+        }}
+      >
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       </Stack>
-      <StatusBar style="auto" />
+      <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} translucent />
     </ThemeProvider>
   );
 }
