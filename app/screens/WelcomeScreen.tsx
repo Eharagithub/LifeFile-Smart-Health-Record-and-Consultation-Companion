@@ -201,7 +201,7 @@ export function WelcomeScreen() {
               style={styles.loginButton}
               onPress={handleLogin}
             >
-              <Text style={styles.loginButtonText}>Login to Your Account</Text>
+              <Text style={styles.loginButtonText}>Login to Your Account!</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
